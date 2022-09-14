@@ -1,29 +1,20 @@
 #include "main.h"
 
 /**
- * print_sign - print + if n is greater than zero,
- *             0 if n is zero and - if n is less
- *             than zero.
+ * _isalpha - checks if character is a letter
+ *            both lowercase or uppercase
  *
- * @n: takes integer type input for function.
+ * @c: takes input from other functions.
  *
- * Return: 1 if +, 0 if 0 and -1 if -
+ * Return: 1 is c if true else 0
 */
 
-int print_sign(int n)
+int _isalpha(int c)
 {
-	if (n > 0)
-	{
-		_putchar(43 + 0);
+	if ((c >= 97 && c <= 122) ||
+	   (c >= 65 && c <= 90))
 		return (1);
-	}
-	else if (n == 0)
-	{
-		_putchar(0 + 48);
-		return (0);
-	}
 	else
-	{
-		_putchar(45 + 0);
-		return (-1);
-	}
+		return (0);
+	return (0);
+}
