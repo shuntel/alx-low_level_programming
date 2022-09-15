@@ -1,35 +1,72 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * times_table - prints the 9 times table
+ * numLength - returns the length of string
  *
- * Example Table
- * 0, 0, 0, 0, ..
- * 0, 1, 2, 3, ..
+ * @num: operand number
  *
+ * Return: number of digits
 */
 
-void times_table(void)
+int numLength(int num)
 {
-	int num, mult, prod;
+	int length = 0;
 
-	for (num = 0; num <= 9; ++num)
+	if (!num)
+		return (1);
+
+	while (num)
 	{
-		_putchar(48);
-		for (mult = 1; mult <= 9; ++mult)
-		{
-			_putchar(',');
-			_putchar(' ');
-
-			prod = num * mult;
-
-			if (prod <= 9)
-				_putchar(' ');
-			else
-				_putchar((prod / 10) + 48); /get the first digit/
-
-			_putchar((prod % 10) + 48); /get the second digit/
-		}
-		_putchar('\n');
+		num = num / 10;
+		length += 1;
 	}
+
+	return (length);
+}
+
+/**
+ * main - Entry point
+ *
+ * Description: prints the first 98 Fibonacci numbers
+ *	starting with 1 and 2 followed by a new line
+ *
+ *	Solution was copied from Nobert Patrick
+ *	Wise, github handle: Trikcode
+ *
+ * Return: Always 0 (Success)
+*/
+
+int main(void)
+{
+	int count, initial0;
+	unsigned long f1 = 1, f2 = 2, sum, mx = 100000000, f1o = 0, f2o = 0, sumo = 0;
+
+	for (count = 1; count <= 98; ++count)
+	{
+		if (f1o > 0)
+			printf("%lu", f1o);
+		initial0 = numLength(mx) - 1 - numLength(f1);
+
+		while (f1o > 0 && initial0 > 0)
+		{
+			printf("%d", 0);
+			--initial0;
+		}
+
+		printf("%lu", f1);
+
+		sum = (f1 + f2) % mx;
+		sumo = f1o + f2o + (f1 + f2) / mx;
+		f1 = f2;
+		f1o = f2o;
+		f2 = sum;
+		f2o = sumo;
+
+		if (count != 98)
+			printf(", ");
+		else
+			printf("\n");
+	}
+
+	return (0);
 }
