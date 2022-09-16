@@ -1,20 +1,20 @@
-#include "holberton.h"
+#include "main.h"
 
 
 
 /**
 
- * _isdigit - input
+ * _isdigit - checks if input is digit between 0 - 9
 
  *
 
- * Description: define if a character is a number
+ * @c: input
 
- * @c: charater
+ *
 
- * Return: 1 yes 0 no
+ * Return: 1 if is digit, 0 if not
 
- */
+*/
 
 
 
@@ -22,7 +22,7 @@ int _isdigit(int c)
 
 {
 
-	if (c >= '0' && c <= '9')
+	if (c >= 48 && c <= 57)
 
 		return (1);
 
@@ -30,3 +30,4 @@ int _isdigit(int c)
 
 		return (0);
 
+}
