@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _atoi - Entry point
  * @s: input
