@@ -1,68 +1,91 @@
-#include "holberton.h"
+#include "main.h"
 
 
 
 /**
 
- * cap_string - a function that capitalizes all words of a string
+ * cap_string - a function that capitalizes
 
- * @n: input string
+ *              all words of a string
 
- * Return: caps on first letter of a separator
+ *
 
- */
+ * @s: pointer to char input array
 
-char *cap_string(char *n)
+ *
+
+ * Return: @s
+
+*/
+
+
+
+char *cap_string(char *s)
 
 {
 
-	int i, x;
-
-	int cap = 32;
-
-	int separators[] = {',', ';', '.', '?', '"',
-
-		 '(', ')', '{', '}', ' ', '\n', '\t'};
+	int i = 0;
 
 
 
-	for (i = 0; n[i] != '\0'; i++)
+	/*iterate through our array values*/
+
+	while (s[i] != '\0')
 
 	{
 
-		if (n[i] >= 'a' && n[i] <= 'z')
+		/*check for any lowercase letters*/
+
+		if (s[i] >= 97 && s[i] <= 122)
 
 		{
 
-			n[i] = n[i] - cap;
+			/**
 
-		}
+			 * if we have a null character
 
+			 * change its value to capital
 
+			*/
 
-		cap = 0;
-
-
-
-		for (x = 0; x <= 12; x++)
-
-		{
-
-			if (n[i] == separators[x])
+			if (i == 0)
 
 			{
 
-				x = 12;
+				s[i] -= 32;
 
-				cap = 32;
+			}
+
+			/**
+
+			 * if we find any character matching the below before any small
+
+			 * letter we change that value to a capital letter.
+
+			*/
+
+			if (s[i - 1] == 32 || s[i - 1] == 9 || s[i - 1] == 10 ||
+
+				s[i - 1] == 44 || s[i - 1] == 59 || s[i - 1] == 46 ||
+
+				s[i - 1] == 33 || s[i - 1] =i - 1] == 41 || s[i - 1] == 123 ||
+
+				s[i - 1] === 63 || s[i - 1] == 34 ||
+
+				s[i - 1] == 40 || s[ 124)
+
+			{
+
+				s[i] -= 32;
 
 			}
 
 		}
 
+		i++;
+
 	}
 
-	return (n);
+	return (s);
 
 }
-C

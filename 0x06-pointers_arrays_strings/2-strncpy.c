@@ -1,20 +1,26 @@
-#include "holberton.h"
+#include "main.h"
 
 
 
 /**
 
- * _strncpy - Entry point
+ * _strncpy - A function that copies a string.
 
- * @dest: copy to
+ *
 
- * @src: copy from
+ * @dest: pointer to destination input buffer
 
- * @n: input number of char
+ * @src: pointer to source input buffer
 
- * Return: Always 0 (Success)
+ * @n: bytes of @src
 
- */
+ *
+
+ * Return: @dest
+
+*/
+
+
 
 char *_strncpy(char *dest, char *src, int n)
 
@@ -24,15 +30,43 @@ char *_strncpy(char *dest, char *src, int n)
 
 
 
-	for (i = 0; src[i] != '\0'; i++)
+	/**
 
-		if (i < n)
+	 * iterate through src array
 
-			dest[i] = src[i];
+	 * where if there is no null byte
 
-		while (i < n)
+	 * among the first n bytes of source
 
-			dest[i++] = '\0';
+	 * the string placed in dest will not be
+
+	 * null terminated
+
+	*/
+
+	for (i = 0; i < n && src[i] != '\0'; i++)
+
+		dest[i] = src[i];
+
+	/**
+
+	 * if the length of source is less than n
+
+	 * write additional nullbytes to dest to
+
+	 * ensure that a total of n bytes is written
+
+	*/
+
+	while (i < n)
+
+	{
+
+		dest[i] = '\0';
+
+		i++;
+
+	}
 
 
 
