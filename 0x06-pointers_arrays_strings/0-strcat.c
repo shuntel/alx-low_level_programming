@@ -1,26 +1,21 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * _strcat - function that concatenates
- *          two strings.
- *@dest: pointer to destnation input
- * @src: pointer to source input
- *Return: pointer to resulting string @dest
-*/
-
+ * _strcat - a function that concatenates two strings.
+ * @dest: an input string
+ * @src: an input string
+ * Return: A pointer to the resulting string
+ */
 char *_strcat(char *dest, char *src)
 {
-	int c, c2;
+	char *temp = dest;
 
-	c = 0;
-	/*find the size of dest array*/
-	while (dest[c])
-		c++;
+	while (*dest)
+		dest++;
 
-	/* iterate through each src array value without the null byte*/
-	for (c2 = 0; src[c2] ; c2++)
-		/*append src[c2] to dest[c] while overwritting the null byte in dest*/
-		dest[c++] = src[c2];
+	while (*src)
+		*dest++ = *src++;
 
-	return (dest);
+	*dest = '\0';
+	return (temp);
 }
