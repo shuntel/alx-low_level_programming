@@ -1,75 +1,27 @@
-(s[c] != '\0')
-
-	{
-
-		/**
-
-		 * loop through array value five times
-
-		 * to check if the value is equa#include "main.h"
+#include "main.h"
 
 /**
-
- * leet - a function that encodes a string into 1337
-
+ * leet - Encodes a string in leet
  *
-
- * @s: string input
-
+ * @str: String to be encoded
  *
-
- * Return: @s
-
-*/
-
-
-
-char *leet(char *s)
-
+ * Return: Always 0.
+ */
+char *leet(char *str)
 {
+	int i = 0, k;
+	char s[] = "aAeEoOtTlL";
+	char s1[] = "4433007711";
 
-	int i, c = 0;
-
-	int sl[] = {97, 101, 111, 116, 108};
-
-	int ul[] = {65, 69, 79, 84, 76};
-
-	int n[] = {52, 51, 48, 55, 49};
-
-
-
-	/*iterate values in array s*/
-
-	whilel to
-
-		 * any small letter in array sl or
-
-		 * upp
-
-			{
-
-				s[c] = n[i];
-
-				break;
-
-			}
-
-		}
-
-		c++;
-
-er letter in array ul and if it
-
-		 * is replace it with the value in array n
-
-		*/
-
-		for (i = 0; i < 5; i++)
-
+	for (; str[i] != '\0'; i++)
+	{
+		for (k = 0; k <= 9; k++)
 		{
-
-			if (s[c] == sl[i] || s[c] == ul[i])	}
-
-	return (s);
-
+			if (s[k] == str[i])
+			{
+				str[i] = s1[k];
+			}
+		}
+	}
+	return (str);
 }

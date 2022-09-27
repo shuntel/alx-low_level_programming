@@ -1,74 +1,21 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
-<<<<<<< HEAD
-
- * _strcat - function that concatenates
-
- *          two strings.
-
- *
-
- * @dest: pointer to destnation input
-
- * @src: pointer to source input
-
- *
-
- * Return: pointer to resulting string @dest
-
-*/
-
-
-=======
- * _strcat - function that concatenates
- *          two strings.
- *
- * @dest: pointer to destnation input
- * @src: pointer to source input
- *
- * Return: pointer to resulting string @dest
-*/
->>>>>>> 87446cdfa813e4ff4a79ba21e758ae97f0de3c80
-
+ * _strcat - a function that concatenates two strings.
+ * @dest: an input string
+ * @src: an input string
+ * Return: A pointer to the resulting string
+ */
 char *_strcat(char *dest, char *src)
 {
-	int c, c2;
+	char *temp = dest;
 
-<<<<<<< HEAD
-	int c, c2;
+	while (*dest)
+		dest++;
 
+	while (*src)
+		*dest++ = *src++;
 
-
-	c = 0;
-
-	/*find the size of dest array*/
-
-	while (dest[c])
-
-		c++;
-
-
-
-	/* iterate through each src array value without the null byte*/
-
-	for (c2 = 0; src[c2] ; c2++)
-
-		/*append src[c2] to dest[c] while overwritting the null byte in dest*/
-
-		dest[c++] = src[c2];
-
-=======
-	c = 0;
-	/*find the size of dest array*/
-	while (dest[c])
-		c++;
->>>>>>> 87446cdfa813e4ff4a79ba21e758ae97f0de3c80
-
-	/* iterate through each src array value without the null byte*/
-	for (c2 = 0; src[c2] ; c2++)
-		/*append src[c2] to dest[c] while overwritting the null byte in dest*/
-		dest[c++] = src[c2];
-
-	return (dest);
+	*dest = '\0';
+	return (temp);
 }
